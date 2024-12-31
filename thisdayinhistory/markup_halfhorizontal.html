@@ -3,7 +3,6 @@
     word-break: break-word;
   }
 </style>
-{% assign i = 1 %}
 <div class="layout">
   <div class="columns">
     <div class="column"
@@ -19,7 +18,6 @@
           <span class="description clamp--3"><strong>{{ events[event].year }}</strong> {{ events[event].text }}</span>
         </div>
       </div>
-      {% assign i = i | plus:1 %}
       {% endfor %}
     </div>
     <div class="column"
