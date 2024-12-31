@@ -1,0 +1,63 @@
+<style>
+  .trmnl .content .description {
+    word-break: break-word;
+  }
+</style>
+{% assign i = 1 %}
+<div class="layout">
+  <div class="columns">
+    <div class="column"
+      data-list-limit="true" 
+      data-list-max-height="160" >
+      <div class="title center">Events</div>
+      {% for event in metadata.events %}
+      <div class="item ">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content">
+          <span class="description clamp--3"><strong>{{ events[event].year }}</strong> {{ events[event].text }}</span>
+        </div>
+      </div>
+      {% assign i = i | plus:1 %}
+      {% endfor %}
+    </div>
+    <div class="column"
+      data-list-limit="true" 
+      data-list-max-height="160" >
+      <div class="title center">Births / Deaths</div>
+      {% for birth in metadata.births limit:2 %}
+      <div class="item ">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content">
+          <span class="description clamp--2"><strong>b. {{ births[birth].year }}</strong> {{ births[birth].text }}</span>
+        </div>
+      </div>
+      {% endfor %}
+      {% for death in metadata.deaths limit:2 %}
+      <div class="item ">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content">
+          <span class="description clamp--2"><strong>d. {{ deaths[death].year }}</strong> {{ deaths[death].text }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg">
+  <span class="title">This Day in History (Wikipedia)</span>
+
+  <span class="instance">{{ metadata.current_date }}</span>
+</div>
+
+
+
+
+
+

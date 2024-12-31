@@ -1,0 +1,59 @@
+<style>
+  .trmnl .content .description {
+    word-break: break-word;
+  }
+
+  .trmnl .title.title--small {font-size: 10px;}
+</style>
+{% assign i = 1 %}
+<div class="layout">
+  <div class="columns">
+    <div class="column"
+      data-list-limit="true" 
+      data-list-max-height="160" >
+      <div class="title center title--small gap--xsmall">Events</div>
+      <div class="item gap--xsmall">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content gap--xsmall">
+          <span class="description clamp--2"><strong>{{ events[metadata.events[0]].year }}</strong> {{ events[metadata.events[0]].text }}</span>
+        </div>
+      </div>
+
+      <div class="item ">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content gap--xsmall">
+          <span class="description clamp--2"><strong>b. {{ births[metadata.births[0]].year }}</strong> {{ births[metadata.births[0]].text }}</span>
+        </div>
+      </div>
+      <div class="item ">
+        <div class="meta">
+          <span class="index"></span>
+        </div>
+        <div class="content gap--xsmall">
+          <span class="description clamp--2"><strong>d. {{ deaths[metadata.deaths[0]].year }}</strong> {{ deaths[metadata.deaths[0]].text }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="title_bar">
+  <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg">
+  <span class="title">This Day in History </span>
+
+  <span class="instance">{{ metadata.current_date }}</span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
