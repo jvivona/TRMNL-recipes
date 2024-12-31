@@ -6,7 +6,7 @@ This Day in History (Wikipedia) plugin for TRMNL
 
 ## Intro
 This recipe displays random entries from the Wikipedia This Day in History page.  Data is supplied in our GitHub repo.
-Random selection of Events, Births & Deaths are randomized every 4 hours
+Random selection of Events, Births & Deaths are changed every 4 hours
 
 Day changes happen at Midnight UTC time.
 
