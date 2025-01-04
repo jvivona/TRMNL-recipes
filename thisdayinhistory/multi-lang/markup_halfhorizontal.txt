@@ -7,44 +7,40 @@
   <div class="columns">
     <div class="column"
       data-list-limit="true" 
-     data-list-max-height="340" >
-      <div class="title center">Events</div>
+      data-list-max-height="160" >
+      <div class="title center">{{ metadata.language.events }}</div>
       {% for event in metadata.events %}
       <div class="item ">
         <div class="meta">
           <span class="index"></span>
         </div>
         <div class="content">
-          <span class="title title--small">{{ events[event].year }}</span>
-          <span class="description clamp--3">{{ events[event].text }}</span>
+          <span class="description clamp--3"><strong>{{ events[event].year }}</strong> {{ events[event].text }}</span>
         </div>
       </div>
       {% endfor %}
     </div>
     <div class="column"
-            data-list-limit="true" 
-     data-list-max-height="340" >
-      <div class="title center">Births</div>
-      {% for birth in metadata.births %}
+      data-list-limit="true" 
+      data-list-max-height="160" >
+      <div class="title center">{{ metadata.language.births }} / {{ metadata.language.deaths }}</div>
+      {% for birth in metadata.births limit:2 %}
       <div class="item ">
         <div class="meta">
           <span class="index"></span>
         </div>
         <div class="content">
-          <span class="title title--small">{{ births[birth].year }}</span>
-          <span class="description clamp--1">{{ births[birth].text }}</span>
+          <span class="description clamp--2"><strong>{{ metadata.language.b }}. {{ births[birth].year }}</strong> {{ births[birth].text }}</span>
         </div>
       </div>
       {% endfor %}
-      <div class="title center">Deaths</div>
-      {% for death in metadata.deaths %}
+      {% for death in metadata.deaths limit:2 %}
       <div class="item ">
         <div class="meta">
           <span class="index"></span>
         </div>
         <div class="content">
-          <span class="title title--small">{{ deaths[death].year }}</span>
-          <span class="description clamp--1">{{ deaths[death].text }}</span>
+          <span class="description clamp--2"><strong>{{ metadata.language.d }}. {{ deaths[death].year }}</strong> {{ deaths[death].text }}</span>
         </div>
       </div>
       {% endfor %}
@@ -53,7 +49,13 @@
 </div>
 <div class="title_bar">
   <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg">
-  <span class="title">This Day in History (Wikipedia)</span>
+  <span class="title">{{ metadata.language.title }}</span>
 
   <span class="instance">{{ metadata.current_date }}</span>
 </div>
+
+
+
+
+
+
