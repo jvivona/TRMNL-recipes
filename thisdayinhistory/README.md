@@ -18,6 +18,8 @@ the Polling URL to: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/h
 paste the appropriate markup code from the html files in this folder
 Set your Refresh Rate to 4x daily
 
-## To-Do
-Spanish and German versions coming soon
-
+## Other Languages
+Follow the instructions above, except use the template files in the multi-lang directory.  Translations are supplied in the JSON - so there's only 1 set of templates.
+URLs for Polling are:
+** German: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/de/thisdayinhist.json
+** Spanish: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/es/thisdayinhist.json
