@@ -23,3 +23,6 @@ Follow the instructions above, except use the template files in the multi-lang d
 -URLs for Polling are:
 	- German: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/de/thisdayinhist.json
 	- Spanish: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/es/thisdayinhist.json
+	- Italian: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/it/thisdayinhist.json
+	
+	** Note - as of July 16 2025 - Italian Wikipedia does not supply Births and Deaths data.  We have submitted a support ticket for it.
