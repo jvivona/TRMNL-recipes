@@ -1,0 +1,31 @@
+<div class="view view--full">
+  <div class="layout layout--col layout--stretch">
+
+    {% if today.size <= 5 %}
+      <!-- 1–5 items: single centered column, rows stretch to fill -->
+      {% for day in today %}
+      <div class="flex flex--col flex--center flex--middle stretch-y">
+        <span class="title title--large text--center">{{ day }}</span>
+      </div>
+      {% endfor %}
+
+    {% else %}
+      <!-- 6–9 items: overflow engine splits into 2 columns -->
+      <div class="columns" data-overflow="true">
+        <div class="column">
+          {% for day in today limit:9 %}
+          <div class="flex flex--col flex--center flex--middle">
+            <span class="title title--base text--center">{{ day }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+  <div class="title_bar">
+    <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg" alt="National Days">
+    <span class="title">National Days</span>
+    <span class="instance">{{ metadata.generated_at | date: "%B %-d, %Y" }}</span>
+  </div>
+</div>

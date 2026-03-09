@@ -1,0 +1,14 @@
+<div class="view view--half_vertical">
+  <div class="layout layout--col layout--stretch">
+    {% for day in today limit:9 %}
+    <div class="flex flex--col flex--center flex--middle stretch-y">
+      <span class="title title--base text--center">{{ day }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="title_bar">
+    <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg" alt="National Days">
+    <span class="title">National Days</span>
+    <span class="instance">{{ metadata.generated_at | date: "%B %-d, %Y" }}</span>
+  </div>
+</div>
