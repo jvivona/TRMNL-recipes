@@ -10,7 +10,7 @@ This recipe displays today's National Days as listed on National Day Calendar we
 Day changes happen at Midnight UTC time.
 
 ## Data Source and Self-Implementation
-if you want to implement this yourself (vs using the recipie at https://usetrmnl.com/plugins )
+if you want to implement this yourself (vs using the recipie at https://trmnl.com/plugins)
 
 Set your strategy to POLLING
 the Polling URL to: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/nationalday/nationalday.json
