@@ -2,7 +2,7 @@
 
 National Day recipe for TRMNL - data from https://nationaldaycalendar.com
 
-![national-day-plugin](./nationalday_preview_full.jpg)
+![national-day-plugin](./nationalday_preview_full.png)
 
 ## Intro
 This recipe displays today's National Days as listed on National Day Calendar website. Data is supplied in our GitHub repo to normalize and prevent changes to data format breaking displays.
