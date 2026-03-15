@@ -5,7 +5,7 @@ AA Daily Reflection - data from https://www.aa.org/daily-reflections
 ![aadailyreflection-plugin](./aadailyreflection_preview_full.png)
 
 ## Intro
-This recipe displays today's AA Daily reflection as listed on aa.org website. Data is supplied in our GitHub repo to normalize and prevent changes to data format breaking displays.
+This recipe displays today's AA Daily Reflection as listed on the aa.org website. Data is supplied in our GitHub repo to normalize and prevent changes to data format breaking displays.
 
 Day changes happen at Midnight US CHICAGO time (that is the base time of the aa.org website).
 
