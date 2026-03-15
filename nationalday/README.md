@@ -5,12 +5,12 @@ National Day recipe for TRMNL - data from https://nationaldaycalendar.com
 ![national-day-plugin](./nationalday_preview_full.png)
 
 ## Intro
-This recipe displays today's National Days as listed on National Day Calendar website. Data is supplied in our GitHub repo to normalize and prevent changes to data format breaking displays.
+This recipe displays today's National Days as listed on the National Day Calendar website. Data is supplied in our GitHub repo to normalize and prevent changes to data format breaking displays.
 
 Day changes happen at Midnight UTC time.
 
 ## Data Source and Self-Implementation
-if you want to implement this yourself (vs using the recipie at https://trmnl.com/plugins)
+if you want to implement this yourself (vs using the recipe at https://trmnl.com/plugins)
 
 Set your strategy to POLLING
 the Polling URL to: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/nationalday/nationalday.json

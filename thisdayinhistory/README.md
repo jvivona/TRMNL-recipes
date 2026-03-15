@@ -11,7 +11,7 @@ Random selection of Events, Births & Deaths are changed every 4 hours
 Day changes happen at Midnight UTC time.
 
 ## Data Source and Self-Implementation
-if you want to implement this yourself (vs using the recipie at https://trmnl.com/plugins )
+if you want to implement this yourself (vs using the recipe at https://trmnl.com/plugins )
 
 Set your strategy to POLLING
 the Polling URL to: https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist.json
