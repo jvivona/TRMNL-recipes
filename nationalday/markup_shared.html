@@ -1,0 +1,12 @@
+{%- assign half_cap = today | slice: 0, 12 -%}
+{%- assign half = half_cap.size | divided_by: 2.0 | ceil -%}
+{%- assign left_days = half_cap | slice: 0, half -%}
+{%- assign right_days = half_cap | slice: half, half_cap.size -%}
+ 
+{% template title_bar %}
+<div class="title_bar">
+  <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/nationalday/nationalday_icon.svg" alt="National Days">
+  <span class="title">** National Days</span>
+  <span class="instance">{{ generated_at | date: "%B %-d, %Y" }}</span>
+</div>
+{% endtemplate %}

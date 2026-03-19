@@ -1,29 +1,27 @@
-  <div class="layout layout--col layout--stretch">
-
-    {% if today.size <= 5 %}
-      <!-- 1–5 items: single centered column -->
-      {% for day in today %}
-      <div class="flex flex--col flex--center flex--middle stretch-y">
-        <span class="title title--base text--center" data-clamp="1">{{ day }}</span>
-      </div>
-      {% endfor %}
-
-    {% else %}
-      <!-- 6–10 items: overflow engine splits into 2 columns -->
-      <div class="columns" data-overflow="true">
-        <div class="column">
-          {% for day in today limit:10 %}
-          <div class="flex flex--col flex--center flex--middle">
-            <span class="title title--small text--center" data-clamp="1">{{ day }}</span>
-          </div>
-          {% endfor %}
+<div class="layout layout--col layout--stretch">
+  {% if today.size <= 5 %}
+    {% for day in today %}
+    <div class="flex flex--col flex--center flex--middle stretch-y">
+      <span class="title title--base lg:title--large text--center" data-clamp="1">{{ day }}</span>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="flex flex--row h--full flex--stretch-x">
+      <div class="flex flex--col h--full flex--center flex--middle">
+        {% for day in left_days %}
+        <div class="flex flex--col flex--center flex--middle">
+          <span class="title title--small lg:title--base text--center" data-clamp="1">{{ day }}</span>
         </div>
+        {% endfor %}
       </div>
-    {% endif %}
-
-  </div>
-  <div class="title_bar">
-    <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/nationalday/nationalday_icon.svg" alt="National Days">
-    <span class="title">National Days</span>
-    <span class="instance">{{ metadata.generated_at | date: "%B %-d, %Y" }}</span>
-  </div>
+      <div class="flex flex--col h--full flex--center flex--middle">
+        {% for day in right_days %}
+        <div class="flex flex--col flex--center flex--middle">
+          <span class="title title--small lg:title--base text--center" data-clamp="1">{{ day }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+{% render "title_bar", generated_at: metadata.generated_at %}

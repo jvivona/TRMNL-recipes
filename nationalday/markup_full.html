@@ -2,36 +2,26 @@
   {% if today.size <= 6 %}
     {% for day in today %}
     <div class="flex flex--col flex--center flex--middle stretch-y">
-      <span class="title title--large text--center">{{ day }}</span>
+      <span class="title title--large lg:title--xxlarge text--center">{{ day }}</span>
     </div>
     {% endfor %}
   {% else %}
-    <div class="flex flex--row" style="flex:1; height:100%;">
-      <div class="flex flex--col" style="flex:1; height:100%; justify-content:space-around;">
-        {% for day in today limit:12 %}
-          {% if forloop.index <= 6 %}
-          <div class="flex flex--col flex--center flex--middle">
-            <span class="title title--base text--center">{{ day }}</span>
-          </div>
-          {% endif %}
+    <div class="flex flex--row h--full flex--stretch-x">
+      <div class="flex flex--col h--full flex--center flex--middle">
+        {% for day in left_days %}
+        <div class="flex flex--col flex--center flex--middle">
+          <span class="title title--base lg:title--large text--center">{{ day }}</span>
+        </div>
         {% endfor %}
       </div>
-      {% if today.size > 6 %}
-      <div class="flex flex--col" style="flex:1; height:100%; justify-content:space-around;">
-        {% for day in today limit:12 %}
-          {% if forloop.index > 6 %}
-          <div class="flex flex--col flex--center flex--middle">
-            <span class="title title--base text--center">{{ day }}</span>
-          </div>
-          {% endif %}
+      <div class="flex flex--col h--full flex--center flex--middle">
+        {% for day in right_days %}
+        <div class="flex flex--col flex--center flex--middle">
+          <span class="title title--base lg:title--large text--center">{{ day }}</span>
+        </div>
         {% endfor %}
       </div>
-      {% endif %}
     </div>
   {% endif %}
 </div>
-  <div class="title_bar">
-    <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/nationalday/nationalday_icon.svg" alt="National Days">
-    <span class="title">National Days</span>
-    <span class="instance">{{ metadata.generated_at | date: "%B %-d, %Y" }}</span>
-  </div>
+{% render "title_bar", generated_at: metadata.generated_at %}
