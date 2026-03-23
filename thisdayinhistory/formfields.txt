@@ -1,0 +1,20 @@
+- keyname: select_0291
+  field_type: select
+  name: Language
+  description: Language to Display
+  help_text: Language to Display
+  default: ""
+  options:
+  - US English: ""
+  - Italian: it
+  - German: de
+  - Spanish: es
+- keyname: author_bio
+  field_type: author_bio
+  name: This Day in History
+  description: "shows Events, Births and Deaths (as available in each launguage) which happened today.  Data displayed changes every 2 hours to try and capture all of todays items.   Available in US English, Spanish, Italian and German."
+  help_text: "Default language is English, change the drop down to select other languages."
+  category: "news,life"
+  github_url: "https://github.com/jvivona"
+  email_address: "help@ajcomputers.support"
+  learn_more_url: "https://github.com/jvivona/TRMNL-recipes/tree/main/thisdayinhistory"

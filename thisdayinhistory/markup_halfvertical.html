@@ -1,59 +1,78 @@
-<style>
-  .trmnl .content .description {
-    word-break: break-word;
-  }
-</style>
 <div class="layout">
-  <div class="columns">
-    <div class="column"
-      data-list-limit="true" 
-      data-list-max-height="360" >
-      <div class="title center">Events</div>
-      {% for event in metadata.events limit:4 %}
-      <div class="item ">
-        <div class="meta">
-          <span class="index"></span>
+  {%- if has_births and has_deaths -%}
+    {%- comment -%}Single column with Events, then Births/Deaths{%- endcomment -%}
+    <div class="columns" data-overflow="true" data-overflow-max-cols="1">
+      <div class="column">
+        <div class="title center title--small lg:title--base">{{ metadata.language.events }}</div>
+        {% for event in events limit: 5 %}
+        <div class="item gap-sm lg:gap-md lg:portrait:hidden">
+          <div class="meta">
+            <span class="index"></span>
+          </div>
+          <div class="content">
+            <span class="description clamp--2 lg:hidden"><strong>{{ event.year }}</strong> {{ event.text }}</span>
+            <span class="title title--small lg:title--base hidden lg:inline-block">{{ event.year }}</span>
+            <span class="description clamp--2 lg:description--base hidden lg:block">{{ event.text }}</span>
+          </div>
         </div>
-        <div class="content">
-          <span class="description clamp--3"><strong>{{ events[event].year }}</strong> {{ events[event].text }}</span>
+        {% endfor %}
+        {% for event in events limit: 8 %}
+        <div class="item gap-sm lg:portrait:gap-md hidden lg:portrait:flex">
+          <div class="meta">
+            <span class="index"></span>
+          </div>
+          <div class="content">
+            <span class="title title--small lg:portrait:title--base">{{ event.year }}</span>
+            <span class="description clamp--2 lg:portrait:description--base">{{ event.text }}</span>
+          </div>
         </div>
+        {% endfor %}
+        
+        {% for birth in births limit: 4 %}
+        <div class="item gap-sm lg:gap-md">
+          <div class="meta">
+            <span class="index"></span>
+          </div>
+          <div class="content">
+            <span class="description clamp--1 lg:hidden"><strong>{{ metadata.language.b }}. {{ birth.year }}</strong> {{ birth.text }}</span>
+            <span class="title title--small lg:title--base hidden lg:inline-block">{{ metadata.language.b }}. {{ birth.year }}</span>
+            <span class="description clamp--1 lg:description--base hidden lg:block">{{ birth.text }}</span>
+          </div>
+        </div>
+        {% endfor %}
+        {% for death in deaths limit: 4 %}
+        <div class="item gap-sm lg:gap-md">
+          <div class="meta">
+            <span class="index"></span>
+          </div>
+          <div class="content">
+            <span class="description clamp--1 lg:hidden"><strong>{{ metadata.language.d }}. {{ death.year }}</strong> {{ death.text }}</span>
+            <span class="title title--small lg:title--base hidden lg:inline-block">{{ metadata.language.d }}. {{ death.year }}</span>
+            <span class="description clamp--1 lg:description--base hidden lg:block">{{ death.text }}</span>
+          </div>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-      {% for birth in metadata.births limit:2 %}
-      <div class="item ">
-        <div class="meta">
-          <span class="index"></span>
-        </div>
-        <div class="content gap--xsmall">
-          <span class="description clamp--2"><strong>b. {{ births[birth].year }}</strong> {{ births[metadata.births[0]].text }}</span>
-        </div>
-      </div>
-      {% endfor %}
-      {% for death in metadata.deaths limit:2 %}
-      <div class="item ">
-        <div class="meta">
-          <span class="index"></span>
-        </div>
-        <div class="content gap--xsmall">
-          <span class="description clamp--2"><strong>d. {{ deaths[death].year }}</strong> {{ deaths[death].text }}</span>
-        </div>
-      </div>
-      {% endfor %}
-
     </div>
-  </div>
+  {%- else -%}
+    {%- comment -%}Events only - single column{%- endcomment -%}
+    <div class="columns" data-overflow="true" data-overflow-max-cols="1">
+      <div class="column">
+        <div class="title center title--small lg:title--base">{{ metadata.language.events }}</div>
+        {% for event in events limit: 15 %}
+        <div class="item gap-sm lg:gap-md">
+          <div class="meta">
+            <span class="index"></span>
+          </div>
+          <div class="content">
+            <span class="description clamp--2 lg:hidden"><strong>{{ event.year }}</strong> {{ event.text }}</span>
+            <span class="title title--small lg:title--base hidden lg:inline-block">{{ event.year }}</span>
+            <span class="description clamp--2 lg:description--base hidden lg:block">{{ event.text }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {%- endif -%}
 </div>
-<div class="title_bar">
-  <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg">
-  <span class="title">This Day in History</span>
-
-  <span class="instance">{{ metadata.current_date }}</span>
-</div>
-
-
-
-
-
-
-
-
+{% render "titlebar", title: metadata.language.title, date: metadata.short_date %}

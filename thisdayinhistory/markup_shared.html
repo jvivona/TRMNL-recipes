@@ -1,0 +1,24 @@
+<style>
+  .trmnl .content .description {
+    word-break: break-word;
+  }
+</style>
+
+{%- comment -%}
+Determine if we have births/deaths data
+{%- endcomment -%}
+{%- assign has_births = false -%}
+{%- assign has_deaths = false -%}
+{%- if births.size > 0 -%}
+{%- assign has_births = true -%}
+{%- endif -%}
+{%- if deaths.size > 0 -%}
+{%- assign has_deaths = true -%}
+{%- endif -%}
+{% template titlebar %}
+<div class="title_bar">
+  <img class="image" src="https://raw.githubusercontent.com/jvivona/tidbyt-data/refs/heads/main/thisdayinhistwikipedia/thisdayinhist_icon.svg">
+  <span class="title">{{ title }}</span>
+  <span class="instance">{{ date }}</span>
+</div>
+{% endtemplate %}
